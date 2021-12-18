@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class main{
+	public static void main(String[] args){
+		Scanner sc=new Scanner(System.in);
+		
+		while(sc.hasNextInt()){
+			int a=sc.nextInt()
+			int b=sc.nextInt();
+			int min=Math.min(a,b);
+			int max=Math.max(a,b);
+			int count=0; 
+
+			for(int i=min;i<=max;i++){
+				int temp=1; 
+				for(int j=i;j!=1;){
+					if(j%2==0){
+						j/=2;
+					}
+					else{
+						j=j*3+1;
+					}
+					temp++;
+				}
+				
+				if(temp>count){
+					count=temp; 
+				}
+			}
+			System.out.println(a+" "+b+" "+count);
+		}
+	}
+}
